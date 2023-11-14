@@ -88,9 +88,11 @@ var finances = [
 ];
 
 // Quantity of months:
-console.log (finances.length);
+console.log ('The quantity of months analyzed is ' + finances.length);
 
 
+
+// Total Profit or Loss:
 var totalSum = 0;
 
 finances.forEach(subArray => {
@@ -100,10 +102,18 @@ finances.forEach(subArray => {
     }
     })
   });
-console.log (totalSum);
-//for (var i = 0; i < finances.length ;i++){
-//
-//  
-//
-//
-//}
+console.log ('$ '+ totalSum);
+
+
+//Average of the changes
+var changes = [];
+for (var i = 0; i < finances.length ;i++){
+
+var monthlyNet= finances[i][1] + finances [i][1];
+
+
+}
+
+  console.log(monthlyNet);
+
+
