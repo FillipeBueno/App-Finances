@@ -102,18 +102,51 @@ finances.forEach(subArray => {
     }
     })
   });
-console.log ('$ '+ totalSum);
+console.log ('Total profits or losses '+'$'+ totalSum);
 
 
 //Average of the changes
 var changes = [];
-for (var i = 0; i < finances.length ;i++){
 
-var monthlyNet= finances[i][1] + finances [i][1];
+var greatestIncrease = { date: '', amount: 0 };
+
+var greatestDecrease = {date: '', amount: 0}
+
+for (var i = 1; i < finances.length ;i++){
+
+  var currentMonthValue = finances[i][1];
+  var previousMonthValue = finances[i - 1][1];
+  var monthlyChange = currentMonthValue - previousMonthValue;
+  changes.push(monthlyChange);
 
 
+//greatest increase.
+  if (monthlyChange > greatestIncrease.amount) {
+    greatestIncrease.date = finances[i][0];
+    greatestIncrease.amount = monthlyChange;
+  }
+  
+//greatest decrease.
+  if (monthlyChange<greatestDecrease.amount){
+    greatestDecrease.date = finances [i][0];
+    greatestDecrease.amount = monthlyChange;
+  }
 }
 
-  console.log(monthlyNet);
+// Calculate the average of changes
+var sum = changes.reduce(function (acc, val) {
+  return acc + val;
+}, 0);
+var average = sum / changes.length;
+
+console.log("Average of changes:", average);
 
 
+
+
+//Console log: Greatest increase
+
+console.log("Greatest increase occurred on", greatestIncrease.date, "with an amount of", greatestIncrease.amount);
+
+//Console log: Greatest decrease
+console.log("Greatest decrease occurred on", greatestDecrease.date, "with an amount of", greatestDecrease.amount);
