@@ -88,7 +88,7 @@ var finances = [
 ];
 
 // Quantity of months:
-console.log ('The quantity of months analyzed is ' + finances.length);
+console.log ('The quantity of months analyzed was ' + finances.length + '.');
 
 
 
@@ -102,7 +102,7 @@ finances.forEach(subArray => {
     }
     })
   });
-console.log ('Total profits or losses '+'$'+ totalSum);
+console.log ('Total profits or losses '+'$'+ totalSum+ '.');
 
 
 //Average of the changes
@@ -139,14 +139,14 @@ var sum = changes.reduce(function (acc, val) {
 }, 0);
 var average = sum / changes.length;
 
-console.log("Average of changes:", average);
+console.log("Average of changes:", average+ '.');
 
 
 
 
 //Console log: Greatest increase
 
-console.log("Greatest increase occurred on", greatestIncrease.date, "with an amount of", greatestIncrease.amount);
+console.log("Greatest increase occurred on", greatestIncrease.date, "with an amount of", greatestIncrease.amount+ '.');
 
 //Console log: Greatest decrease
-console.log("Greatest decrease occurred on", greatestDecrease.date, "with an amount of", greatestDecrease.amount);
+console.log("Greatest decrease occurred on", greatestDecrease.date, "with an amount of", greatestDecrease.amount+ '.');
